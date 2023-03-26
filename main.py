@@ -1,7 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
+import pymongo
 
+MONGO_URL = "mongodb+srv://kkobzar:12345@cluster0.k2acs6d.mongodb.net/?retryWrites=true&w=majority"
 URL = "https://www.olx.ua/d/uk/obyavlenie/prodam-banan-kievskiy-super-karlik-IDC7KUN.html"
+
+
 data = requests.get(URL).text
 
 soup = BeautifulSoup(data, features="html.parser")
@@ -15,4 +19,9 @@ print("Ціна продукта -", product_price)
 print("Опис продукта -", product_description)
 print("Схожі товари -", Similar_ads)
 
+client = MongoClient(MONGO_URL)
+
+db = client["Бананен"]
+films = db["бунун"]
+films.insert_one({"film":"test"})
                   
