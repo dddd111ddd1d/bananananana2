@@ -22,6 +22,6 @@ print("Схожі товари -", Similar_ads)
 client = MongoClient(MONGO_URL)
 
 db = client["Бананен"]
-films = db["бунун"]
-films.insert_one({"film":"test"})
-                  
+product_name = db["бунун"]
+product_name.insert_one({"film":"test"})
+                
