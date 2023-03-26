@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 URL = "https://www.olx.ua/d/uk/obyavlenie/prodam-banan-kievskiy-super-karlik-IDC7KUN.html"
 data = requests.get(URL).text
 
-soup = BeautifulSoup(data, features=URL)
+soup = BeautifulSoup(data, features="html.parser")
 
 product_name = soup.find_all("h1", {"class":"css-1soizd2 er34gjf0"})
 product_price = soup.find_all("h3", {"class":"css-ddweki er34gjf0"})
